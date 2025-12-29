@@ -1,0 +1,20 @@
+.title{
+    font-family: 궁서;
+    font-size: 50px;
+    font-weight: bold; 
+    font-style: italic; /* 글꼴 기울기 */
+}
+.content{
+    color: blue;
+    word-spacing: 10px; /* 어간 */
+    letter-spacing:  5px; /* 자간 */
+}
+h2{
+    color: red;
+    text-align: center;
+    text-shadow: 5px 5px 20px red;
+    text-decoration: red underline overline line-through;
+}
+.subtitle{
+    font-size: 40px;
+}

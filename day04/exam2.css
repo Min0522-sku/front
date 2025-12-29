@@ -1,0 +1,28 @@
+.title{
+    font-family: "맑은고딕", "굴림";
+    font-size: 40px;
+    font-weight: bold; 
+    font-style: italic; /* 글꼴 기울기 */
+}
+/* 외부 글꼴 : 한글글꼴: 눈누 영문: 구글폰트 */
+@font-face {
+    font-family: 'ThinRounded';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/ThinDungGeunMo.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+.content{
+    font-family: 'ThinRounded';
+    color: purple;
+    word-spacing: 10px; /* 어간 */
+    letter-spacing:  20px; /* 자간 */
+    line-height: 100px; /* 줄간격 */
+}
+.writer{
+    text-align: right ; /* 내용물의 가로 정렬 */
+    text-decoration: underline overline line-through; /* 밑줄, 윗줄, 취소선 */
+    text-shadow: 10px 10px 10px gray; /* 텍스트 그림자 x축(+right -left) y축(+bottom -top) 연하기, 색*/
+    color : green; /* 방법1 */
+    color : rgb(140, 200, 100); /*방법2 rgb색상*/
+    color : #000000 /* 방법3 헥스코드(6자릿수 16진수 코드)*/
+}
