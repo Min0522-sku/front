@@ -1,0 +1,36 @@
+.title{
+    font-family: '맑은고딕';
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-align: center;
+} /* 강의명, 만족도조사 */
+
+.subtitle{
+    text-align: center;
+}
+
+.name{
+    text-align: center;
+}
+
+.tr1{background-color: rgba(188, 197, 233, 0.76);}
+
+.content{
+    text-align: center;
+    margin:auto;
+    font-family: '맑은고딕';
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+} /* 만족도 조사 질문 내용 */
+
+.writer{
+    font-family: '맑은고딕';
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin : auto;
+} /* 건의사항 */
