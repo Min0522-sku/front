@@ -32,9 +32,26 @@
 //if (id == 'admin' && password == 1234) console.log("true")
     //else console.log("false")
 // [지문7] prompt 함수로 정수를 입력받아 입력받은 값이 홀수 이면서 7배수 이면 true / 아니면 false 로 console탭에 출력하시오.
-let i = parseInt(prompt("정수3 : "))
-if(i%2 !=0 && i%7 ==0) console.log("true")
-    else console.log("false")
+// let i = parseInt(prompt("정수3 : "))
+// if(i%2 !=0 && i%7 ==0) console.log("true")
+//     else console.log("false")
 // [지문8] 1차점수 와 2차점수 prompt함수로 각 입력받아서 총점이 150점이상이면 '합격' 아니면 '불합격' HTML의 <h3> 에 출력하시오.
-// [지문9] 두 사람의 이름을 prompt함수로 각 입력받아서 만일 이름이 '유재석' 이면 뒤에 (방장) 이라고 이름 뒤에 붙이고 아니면 생략한다.  HTML의 <ol> 에 결과를 출력하시오.
+// let n1 = parseInt(prompt("1차점수 : "))
+// let n2 = parseInt(prompt("2차점수 : "))
+// let sum = n1 + n2
+// let result = sum >= 150 ? '합격' : '불합격'
 
+// // 삼항연산자 조건 ? 참 : 거짓, 참에는 true 대신 반환할 자료 거짓에는 false 대신 반환할 자료
+// // 조건1 ? 참 : 조건2 ? 참 : 조건3 ? 참 : 거짓  이렇게 중첩 가능
+// // let result
+// // if (sum >= 150) result = '합격'
+// //     else result = '불합격'
+// document.write(`<h3>${result}</h3>`)
+// [지문9] 두 사람의 이름을 prompt함수로 각 입력받아서 만일 이름이 '유재석' 이면 뒤에 (방장) 이라고 이름 뒤에 붙이고 아니면 생략한다.  HTML의 <ol> 에 결과를 출력하시오.
+let name1 = prompt(' 이름1 : ')
+let name2 = prompt(' 이름2 : ')
+name1 += name1 == '유재석' ? '(방장)' : '';
+name2 += name2 == '유재석' ? '(방장)' : '';
+let result = `<li> ${name1} </li>
+              <li> ${name2} </li>`;
+document.querySelector(`ol`).innerHTML = result;
