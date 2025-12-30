@@ -1,0 +1,28 @@
+*{
+    border: solid 1px red;
+    margin: 10px;
+}
+.s1{
+    display: inline; /* 표기방법*/
+    width: 200px;
+    height: 200px; /* 사이즈 적용 안됨*/
+    margin: 20px;
+    padding: 20px;
+}
+.s2{
+    display: block; /* 블럭은 사이즈 적용 가능 */
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+}
+.s3{
+    display: inline-block; /*사이즈 조절 가능*/
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    padding: 20px;
+}
+.s4{
+    display: none;
+}

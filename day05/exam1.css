@@ -1,0 +1,43 @@
+/*  * 전체 선택자*/
+*{
+    /* 테두리*/
+    border: solid 3px red;
+    /*안쪽여백*/
+    padding: 10px;
+}
+/* . 클래스 선택자 */
+.경기도{
+    border-top: solid 3px orange; /*실선*/
+    border-right: dotted 3px blue; /* 점선*/
+    border-bottom: dashed 3px black; /* 대쉬선 */
+    border-left: double 3px green; /* 이중선*/
+    border-radius: 20px 10px 100px 30px; /* 둥근 모서리  (시계 방향 -> 왼쪽상단 부터)*/ 
+    box-shadow: 5px 5px 15px red;
+    width: 500px;
+    height: 500px;
+    text-align: center; /* 안의 내용물 정렬*/
+}
+.안양시{
+    padding-top: 20px; /*안쪽여백*/
+    padding-right: 30px;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+.만안구{
+    /* 가로 사이즈 고정, 생략시 100%(부모크기)*/
+    width: 200px;
+    padding: 10px;
+    margin: 0 auto; /*바깥 여백 이용한 구역 가로 가운데 정렬, 주의할점 width 사이즈가 100%거나 생략되었으면 사용 불가능 이미 화면을 꽉채웠기 때문*/
+    box-sizing: content-box; /*border-box 구역크기: content+border+padding 테두리까지 크기로 잡음, content-box 구역크기: content */
+    background-color: palegoldenrod;
+}
+.사진{
+    width: 50px;;
+}
+.입력상자{
+    width: 50px;
+}
