@@ -7,12 +7,12 @@
     margin: 3px;
 }
 .box{
-    transform: scale(1.5);
+    /*transform: scale(1.5);*/
     background-color: white;
     width: 500px;
     border-radius: 15px;
     box-shadow: 0 5px 3px gray;
-    margin-top: 200px;
+    /* margin-top: 200px; */
 }
 .image > img{
     width: 600px;
