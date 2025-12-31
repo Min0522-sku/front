@@ -1,0 +1,28 @@
+*{
+    padding: 10px;
+}
+.box{
+    width: 350px;
+}
+.img{
+    border: gray 1px solid;
+}
+
+.img > img{
+    width: 300px;
+    object-fit: cover; /* 이미지가 부모요소 보다 커지면 자동 크기 맞춤*/
+}
+.text{
+    border: gray 1px solid;
+}
+.title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.price{
+    font-weight: bold;
+    font-size: 18px;
+}
+.orange{
+    color: orange;
+}
