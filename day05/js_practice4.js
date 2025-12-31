@@ -46,3 +46,17 @@
 // else if(p1 == 1 && p2 == 0) {console.log("p1 승리")}
 // else if(p1 == 2 && p2 == 0) {console.log("p2 승리")}
 
+// let carArray = ['250어7142', '142가7415', '888호8888']
+// let locationArray = ['A1', 'B3', 'C2']
+
+// let carnum = prompt("차량 번호 : ")
+// if(carArray.includes(carnum)) {console.log(`차량 위치 : ${locationArray[carArray.indexOf(carnum)]}`)}
+// else {console.log("차량이 존재하지 않습니다")}
+
+// let courseList = ['수학', '영어', '과학', '국어']
+// let del = prompt("제외 할 과목명 : ")
+// if(courseList.includes(del)) {
+//     courseList.splice(courseList.indexOf(del), 1)
+//     console.log(courseList)
+// }
+// else {console.log("해당 과목은 신청 목록에 없습니다")}
