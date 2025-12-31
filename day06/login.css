@@ -76,3 +76,93 @@ body{
     font-weight: bold;
     text-decoration: none;
 }
+
+.friend-footer * {
+    display: revert; 
+    flex-direction: revert;
+    align-items: revert;
+    margin: revert;
+    background-color: white; 
+    color: rgb(126, 125, 125);
+    font-size: 11px;
+}
+.footer{
+    width: 980px;
+    margin: 40px;
+
+}
+
+.directionList{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+.directionList > li{
+    margin: 5px;
+}
+
+.languageList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+.languageList > li{
+    margin: 5px;
+}
+.footer{
+    background-color: white;
+    color: rgb(126, 125, 125);
+    width: 980px;
+    margin: 0px auto;
+    font-size: 11px;
+
+}
+
+.directionList{
+    background-color: white;
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+.directionList > li{
+    background-color: white;
+    margin: 5px;
+}
+.directionList > li > a{
+    background-color: white;
+    color: rgb(126, 125, 125);
+    text-decoration: none;
+}
+
+.languageList{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+.languageList > li{
+    background-color: white;
+    margin: 5px;
+}
+.mvlcopyright{
+    background-color: white;
+    text-align: center;
+}
+.copyright{
+    background-color: white;
+}
+._41ug{
+    flex-direction: row;
+}

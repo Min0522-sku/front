@@ -157,3 +157,55 @@ body > script + svg,
 body > script {
     display: none !important;
 }
+
+.footer{
+    background-color: white;
+    color: rgb(126, 125, 125);
+    width: 980px;
+    margin: 40px;
+    font-size: 11px;
+}
+
+.directionList{
+    background-color: white;
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+.directionList > li{
+    background-color: white;
+    margin: 5px;
+}
+.directionList > li > a{
+    background-color: white;
+    color: rgb(126, 125, 125);
+    text-decoration: none;
+}
+
+
+.languageList{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+.languageList > li{
+    background-color: white;
+    margin: 5px;
+}
+.mvlcopyright{
+    background-color: white;
+    text-align: center;
+}
+.copyright{
+    background-color: white;
+}
+._41ug{
+    flex-direction: row;
+}
