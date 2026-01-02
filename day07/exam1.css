@@ -1,0 +1,20 @@
+#header, #main, #footer{
+    width: 1280px;
+    margin: 0 auto;
+}
+#main{
+    display: flex;
+    flex-direction: row; /* 가로배치(기본값)*/
+    flex-wrap: nowrap; /* 줄바꿈처리 안함(기본값) */
+    justify-content: space-between;
+}
+#content{
+    width: 830px;
+}
+#sidebar{
+    width: 420px;
+}
+#footer{
+    background-color: gray;
+    color: white;
+}
