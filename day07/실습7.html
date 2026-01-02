@@ -14,7 +14,7 @@
             <div id="right-header"> 
                 <ol class="top-menu">
                     <li><a href="#">장민서(alstj5220)님</a></li>
-                    <li><a href="#">로그아웃</a></li>
+                    <li><a class="top-menu-logout" href="#">로그아웃</a></li>
                     <li><a href="#">정보수정</a></li> 
                 </ol>
                 <ol class="main-menu">
@@ -30,17 +30,27 @@
         </div>
         <div id="main">
             <div id="sidebar">
-                <h3>The 배이킹</h3>
-                <ol class="sidebar-menu">
-                    <li><a href="#">카메라 동작 원리</a></li>
-                    <li><a href="#">무조건 찍어 보자</a></li>
-                    <li><a href="#">조리개와 심도</a></li>
-                    <li><a href="#">카메라 촬영 모드</a></li>
+                <div id="sidebar-menu">
+                    <h3>The 배이킹</h3>
+                    <p>안녕하세요. 쿠키와 빵 만들기 정보를 공유하고 소통하는 공간입니다.</p>
+                    <div id="sidebar-input"><input type="text"/><button>검색</button></div>
+                </div>
+                <ol class="sidebar-menu1">
+                    <li><h3>배이킹 요리</h3></li>
+                    <li>쿠키 만들기</li>
+                    <li>빵 만들기</li>
+                    <li>마카롱 만들기</li>
+                </ol>
+                <ol class="sidebar-menu2">
+                    <li><h3>최근 댓글</h3></li>
+                    <li>쿠키 재미있어요.</li>
+                    <li>빵좋아요</li>
+                    <li>마카롱 만들기 추천</li>
                 </ol>
             </div>
             <div id="content">
-                <div>
-                    <div>
+                <div id="content1">
+                    <div id="content1-top">
                         <h3>알림</h3>
                         <ul>
                             <li><a href="#">쿠키 클래스 연기합니다.</a>09.30</li>
@@ -49,7 +59,7 @@
                             <li><a href="#">쿠키 클래스 연기합니다.</a>09.30</li>
                         </ul>
                     </div>
-                    <div>
+                    <div id="content1-bottom">
                         <h3>게시판</h3>
                         <ul>
                             <li><a href="#">쿠키 클래스 연기합니다.</a>09.30 </li>
@@ -60,14 +70,13 @@
                     </div>
                 </div>
 
-                <div>
-                    <h3>게시판</h3>
-                    <ul>
-                        <li><a href="#">도너츠 만들기 [3]</a>24.11.18 </li>
-                        <li><a href="#">도너츠 만들기 [3]</a>24.11.18 </li>
-                        <li><a href="#">도너츠 만들기 [3]</a>24.11.18 </li>
-                        <li><a href="#">도너츠 만들기 [3]</a>24.11.18 </li>
-                    </ul>
+                <div id="content2">
+                    <h3>제빵 클래스</h3>
+                        <img src="./img/bread1.png"/><a href="#">도너츠 만들기 [3]</a>24.11.18
+                        <img src="./img/bread2.png"/><a href="#">도너츠 만들기 [3]</a>24.11.18
+                        <img src="./img/bread3.png"/><a href="#">도너츠 만들기 [3]</a>24.11.18
+                        <img src="./img/bread4.png"/><a href="#">도너츠 만들기 [3]</a>24.11.18 
+                    
                 </div>
 
             </div>
