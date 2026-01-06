@@ -1,0 +1,53 @@
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#header{
+    background-color: beige;
+}
+#header > ul{
+    display: flex;
+    justify-content: center;
+}
+.menu{
+    padding: 10px 20px;
+    position: relative;
+}
+.submenu{
+    position: absolute;
+    top: 40px;
+    left: 8px;
+    padding: 5px;
+    background-color: beige;
+    display: none; /* 배치 방법*/
+}
+.menu:hover .submenu{
+    display: block;
+}
+
+
+#header2{
+    background-color: skyblue;
+}
+#header2 > ul{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+#header2 >ul >li{
+    padding: 10px;
+}
+.submenu2{
+    position: absolute; /*가장 가까운 부모가 포지션 기준*/
+    width: 100%;
+    background-color: skyblue;
+    top: 40px;
+    display: none;
+}
+#header2 > ul:hover .submenu2{
+    display: block;
+}
+*{padding: 0px; margin: 0px;}

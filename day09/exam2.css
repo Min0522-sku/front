@@ -1,0 +1,39 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{ /* 선택자: hober 만일 해당 요소에 마우스를 올렸을때*/
+    color: red;
+    font-size: 20px;
+}
+a:visited{ /*선택자 visited 만일 브라우저 내 방문한 적이 있는 링크일때*/
+    color: blue;
+    font-size: 10px;
+}
+a:active{ /*선택자 active 만일 해당 요소를 클릭 했을때*/
+    color: yellow;
+    font-size: 30px;
+}
+
+.box1::before{ /*선택자 ::before/after html에는 존재하지 않지만 해당요소 앞/뒷부분에 문자 처리해 가상(가짜)요소(content)를 추가 */
+    content: "[가상 요소 before 구역]";
+    color: aqua;
+
+}
+.box1::after{
+    content: "[가상 요소 after 구역";
+    color: red;
+}
+ /*활용 글머리*/
+ li{list-style: none;}
+ .box2 > li::before{
+    content: "★";
+    color: blue;
+ }
+/*글머리 이미지도 가능*/
+ .box2 > li::after{content: url("../레제.jpg");}
+
+ /* nth-of-type(순서번호) 선택자의 요소가 여러개일때 번호로 선택하기*/
+ .box2 > li:nth-of-type(1){
+    color: yellow;
+ }
