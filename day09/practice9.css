@@ -1,0 +1,74 @@
+.red{
+    background-color: red;
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    
+}
+.box1{
+    background-color: yellow;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 16px;
+    position:absolute;
+    top: 25%;
+    right: 43%;
+}
+.box2{
+    background-color: yellow;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 16px;
+    position:absolute;
+    right: 68%;
+    top: 40%;
+}
+.box3{
+    background-color: yellow;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 16px;
+    position:absolute;
+    right: 18%;
+    top: 40%;
+}
+.box4{
+    background-color: yellow;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 16px;
+    position:absolute;
+    right: 68%;
+    top: 60%;
+}
+.box5{
+    background-color: yellow;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 16px;
+    position:absolute;
+    right: 18%;
+    top: 60%;
+}
+.box6{
+    background-color: yellow;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 16px;
+    position:absolute;
+    top: 75%;
+    right: 43%;
+}
