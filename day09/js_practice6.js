@@ -79,3 +79,23 @@
 //     movieTitles.push({title: movies[i].title});
 // }
 // console.log(movieTitles);
+
+
+
+const team = [
+  { name: '철수', department: '개발팀' },
+  { name: '영희', department: '기획팀' },
+  { name: '민수', department: '개발팀' },
+  { name: '지혜', department: '기획팀' }
+];
+
+let result = [];
+for(let i =0; i < team.length; i++){
+    let nik = team[i].name;
+    let dept = team[i].department;
+    if(result[dept] == undefined){
+        result[dept] = [];
+    }
+    result[dept].push(nik);
+}
+console.log(result)
