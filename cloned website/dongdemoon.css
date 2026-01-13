@@ -1,24 +1,25 @@
-
 body {
     margin: 0;
+    padding-top: 160px;
     font-size: 16px;
     line-height: 1.5;
     background-color: #fff;
     color: #232323;
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Pretendard', 'Nanum Gothic', sans-serif;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* 1. 기본 설정 및 상단 고정 */
-body {
+ul {
+    list-style: none;
     margin: 0;
-    padding-top: 140px; /* 헤더 높이만큼 본문을 아래로 밀어줌 */
-    font-family: 'Nanum Gothic', sans-serif;
+    padding: 0;
 }
 
+/* --- 헤더 레이아웃 --- */
 #header {
     position: fixed;
     top: 0;
@@ -26,98 +27,521 @@ body {
     width: 100%;
     background-color: #fff;
     z-index: 1000;
-    border-top: 4px solid #de1d24; /* 엽떡 포인트 레드 라인 */
+    border-top: 4px solid #de1d24;
     border-bottom: 1px solid #ddd;
 }
 
-/* 2. 로고와 우측 유틸 메뉴 배치 */
-.header-top {
+.header-inner {
     display: flex;
-    justify-content: space-between; /* 좌우 끝으로 배치 */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 20px;
     align-items: center;
-    padding: 10px 10%; /* 양옆 여백 */
 }
 
-.logo img {
-    height: 60px; /* 로고 크기 조절 */
+/*왼쪽 로고 영역*/
+.header-left {
+    flex: 0 0 220px; 
 }
 
+.header-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    margin-right: 100px;
+}
+
+/*오른쪽 상단 유틸리티 (SNS/로그인) */
 .util-menu {
     display: flex;
     align-items: center;
-    gap: 10px; /* 아이콘 사이 간격 */
+    margin-bottom: 15px;
 }
 
-.util-menu img {
-    width: 25px; /* SNS 아이콘 크기 */
+.sns-links {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.sns-links img {
+    width: 24px;
+    height: 24px;
 }
 
 .auth-text {
-    margin-left: 20px;
     font-size: 13px;
     color: #666;
 }
 
-.auth-text a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* 3. 메인 내비게이션 (GNB) */
-.gnb {
-    border-top: 1px solid #eee;
-}
-
+/*메인 메뉴 (GNB) */
 .gnb > ul {
     display: flex;
-    justify-content: center; /* 메뉴 중앙 정렬 */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 15px;
 }
 
 .menu-item {
     position: relative;
-    padding: 15px 40px;
+    padding: 10px 25px;
 }
 
 .menu-item > a {
-    text-decoration: none;
-    color: #333;
+    font-size: 18px;
     font-weight: bold;
-    font-size: 17px;
+    color: #333;
 }
 
-/* 4. 하위 메뉴 (드롭다운) 설정 */
+/* 통합 서브메뉴 (드롭다운) */
 .submenu {
-    display: none; /* 기본적으로 숨김 */
+    display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
-    min-width: 160px;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 160px;
     background-color: #fff;
-    list-style: none;
+    padding: 20px 0;
+    height: 280px;
+    text-align: center;
+    z-index: 1001;
+}
+
+.submenu li {
     padding: 10px 0;
-    border: 1px solid #eee;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .submenu li a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
+    font-size: 16px;
     color: #666;
-    font-size: 14px;
+    transition: 0.2s;
 }
 
 .submenu li a:hover {
-    background-color: #f9f9f9;
-    color: #de1d24; /* 마우스 올리면 빨간색 */
+    color: #de1d24;
+    font-weight: bold;
 }
 
-/* 5. 마우스 호버 시 드롭다운 작동 */
-/* .gnb 전체에 마우스를 올리면 모든 .submenu가 나오게 하려면 아래와 같이 설정 */
-.gnb:hover .submenu {
+
+/* 메뉴 리스트 영역에 마우스를 올렸을 때만 작동 */
+.gnb > ul:hover .submenu {
     display: block;
+}
+
+.gnb::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -50vw; 
+    width: 200vw;
+    height: 0;
+    background: #fff;
+    border-bottom: 1px solid #dcdcdc;
+    z-index: 999;
+    transition: height 0.3s;
+    pointer-events: none; 
+}
+
+.gnb:hover::after {
+    height: 320px;
+}
+.main-banner{
+    width: 100%;
+    overflow: hidden;
+}
+.main-banner img {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover; 
+    object-position: center; 
+    display: block;
+}
+.menu-section {
+    max-width: 1300px; 
+    margin: 0 auto;    
+    padding: 50px 20px;
+}
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.mainpagetitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #232323;
+}
+
+.menuslidetitle ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menuslidetitle li {
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+    position: relative;
+}
+
+
+.menuslidetitle li:not(:last-child)::after {
+    content: "|";
+    margin-left: 20px;
+    color: #ddd;
+}
+
+.menuslidetitle li.active {
+    color: #de1d24;
+    font-weight: bold;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.menuslidecontent {
+    text-align: center;
+    overflow: hidden;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+.yupmenuslideimg {
+    width: 100%;
+    border-radius: 15px;
+}
+.menuslidecontent:hover .yupmenuslideimg {
+    transform: scale(1.1);
+}
+.menuslidecontent:hover {
+    transform: translateY(-10px);
+}
+.menuslidecontent:hover .mp_menutitle {
+    color: #de1d24;
+}
+.mp_menutitle {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+.bg-section {
+    background-image: url('./img/bgimg_mainmid.png');
+    background-size: 1650px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px 0; 
+}
+.inner {
+    max-width: 1200px; 
+    margin: 0 auto;    
+    padding: 0 20px;  
+}
+.notice-event-section {
+    padding: 100px 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* 왼쪽 공지사항 박스 */
+.main-notice-box {
+    width: 45%;
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 30px;
+    height: 350px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.notice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.notice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notice-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+}
+
+.notice-list li a {
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    max-width: 75%;
+}
+
+.notice-list li span {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* 오른쪽 홍보 이미지 */
+.main-regis-img {
+    width: 55%;
+}
+
+.main-regis-img img {
+    width: 100%;
+    height: 430px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.event-section {
+    padding-bottom: 100px; 
+    margin-top: -50px; 
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.view-more {
+    font-size: 14px;
+    color: #888;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+.event-img img {
+    width: 100%;
+    display: block;
+}
+
+.event-info {
+    padding: 20px;
+}
+
+.event-status {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.event-status.on { color: #de1d24; }
+
+.event-name {
+    font-size: 16px;
+    font-weight: bold;
+    height: 44px; 
+    overflow: hidden;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.event-date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.event-card:hover {
+    background-color: #de1d24;
+    transform: translateY(-10px);
+}
+
+.event-card:hover .event-name,
+.event-card:hover .event-date,
+.event-card:hover .event-status {
+    color: #fff;
+}
+
+
+#footer {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 60px 0;
+}
+
+.footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 60px;
+    padding: 0 20px;
+}
+
+/* 로고 */
+.foot-logo {
+    flex: 0 0 150px;
+}
+.foot-logo img { width: 100%; }
+
+/* 중앙 정보 영역 */
+.foot-info {
+    flex: 1;
+    min-width: 500px;
+}
+
+.foot-links {
+    margin-bottom: 25px;
+}
+
+.foot-links a {
+    font-size: 14px;
+    color: #666;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.foot-links a.red-text {
+    color: #de1d24;
+}
+
+.company-details p {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.company-details span {
+    color: #ddd;
+    margin: 0 5px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+.foot-content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    gap: 40px;
+}
+/* 오른쪽 엠블럼 */
+.foot-emblems {
+    flex: 1; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+}
+
+/* 개별 엠블럼 칸 */
+.emblem-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.emblem-item img {
+    height: 40px; 
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* 텍스트 영역 */
+.emblem-text {
+    text-align: left;
+}
+
+.emblem-year {
+    font-size: 11px;
+    color: #999;
+    margin: 0;
+}
+
+.emblem-title {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.4;
+    margin: 2px 0 0 0;
+}
+
+.quick-menu {
+    position: fixed;
+    right: 40px;  
+    bottom: 50px; 
+    z-index: 9999; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+}
+
+/* 광고 이미지 */
+.floating-ad img {
+    width: 160px; 
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    border: 3px solid #956b43;
+}
+
+.floating-ad img:hover {
+    transform: translateY(-5px); 
+}
+
+/* TOP 버튼 스타일 */
+.top-button {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-left: 50px;
+}
+
+.top-button img {
+    width: 20px; 
+}
+
+.top-button:hover {
+    background-color: #f8f8f8;
 }
