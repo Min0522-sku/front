@@ -5,9 +5,48 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-
+    <style>
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+    <h1 id="title"></h1>
+    <input id="usernameInput"/>
+    <button id="submitBtn" onclick="func2()">확인</button>
+    <p id="greeting"></p>
+
+    <button id="styleBtn" onclick="func3()">스타일</button>
+    <div id="colorBox">예제3</div>
+
+    <button id="themeBtn" onclick="func4()">테마 변경</button>
+
+
+    <button id="removeBtn" onclick="func5()">삭제버튼</button>
+    <div id="targetBox">타겟 박스</div>
+
+
+    <p class="item">첫번째</p>
+    <p class="item">두번째</p>
+    <p> 변 수 </p>
+    <p class="item">세번째</p>
+
+    <button id="changeImgBtn" onclick="func7()">이미지 변경 버튼</button>
+    <img id="mainImage"/>
+
+
+    <select id="foodSelect" onchange="func8()">
+        <option>떡볶이</option>
+        <option>라면</option>
+    </select>
+
+
+    <input id="nameInput"/>
+    <button onclick="func9()">등록</button>
+    <div id="namePrint"></div>
+
     <script src='exam1.js'></script>
 </body>
 </html>
