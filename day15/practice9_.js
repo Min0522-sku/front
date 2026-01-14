@@ -19,7 +19,7 @@ const vacationArray = [
 //사원 출력 함수
 staffPrint()
 function staffPrint(){
-    const tbody = document.querySelector("스태프테이블바디"); // html id나 클래스에 따라 바꿔야 하는곳
+    const tbody = document.querySelector(".staffTable tbody"); // html id나 클래스에 따라 바꿔야 하는곳
     let html = "";
     for(let i = 0; i<staff.length; i++){ // staff 배열를 순회
         const member = staff[i]; // staff의 객체 하나를 저장
@@ -39,8 +39,8 @@ function staffPrint(){
                 <td>${memberDepartmentName}</td>
                 <td>${member.staffRank}</td>
                 <td>
-                    <button class="staffFix" onclick="staffFix(${member.scode})">수정</button>
-                    <button class="staffDel" onclick="staffDel(${member.scode})">삭제</button>
+                    <button class="update" onclick="staffFix(${member.scode})">수정</button>
+                    <button class="delete" onclick="staffDel(${member.scode})">삭제</button>
                 </td>
             </tr>
         `;
@@ -79,7 +79,7 @@ function staffFix(scode){ // 사원 수정 함수
 // 휴가 목록 출력 함수
 vacationPrint()
 function vacationPrint(){
-    const divbody = document.querySelector("휴가 div 바디") // html에 따라 바꿔야 하는곳
+    const right_bottomDom = document.querySelector("#right_bottom") // html에 따라 바꿔야 하는곳
     let html = "";
     for(let i = 0; i<vacationArray.length; i++){ // 휴가 배열를 순회
         const vacation = vacationArray[i]; // 휴가의 객체 하나를 저장
@@ -93,12 +93,20 @@ function vacationPrint(){
         };
 
         html += `
-                <div>${staffName} <button class="vacationDel" onclick="vacationDel(${vacation.vcode})">신청취소</button><div>
-                <div>${vacation.vacationStart}~${vacation.vacationEnd}</div>
-                <div>${vacation.vacationReason}</div>
+                <div id="box2">
+                    <div class="line1">
+                        <div>${staffName}</div><button class="vacationDel" onclick="vacationDel(${vacation.vcode})">신청취소</button>
+                    </div>
+                    <div class="line2">
+                        ${vacation.vacationStart}~${vacation.vacationEnd}
+                    </div>
+                    <div class="line3">
+                        ${vacation.vacationReason}
+                    </div>
+                </div>
         `;
     };
-    divbody.innerHTML = html;
+    right_bottomDom.innerHTML = html;
 }
 
 //휴가 신청 삭제 함수
@@ -120,13 +128,13 @@ function vacationDel(vcode){
 // 휴가 신청 함수
 let vcode = 3;
 function vacationAdd(){
-    const 사원명선택Dom = document.querySelector("사원명선택");
-    const scode = 사원명선택Dom.value;
-    const startDom = document.querySelector("start")
+    const staffDom = document.querySelector(".staffselect");
+    const scode = staffDom.value;
+    const startDom = document.querySelector(".startdate")
     const start = startDom.value;
-    const endDom = document.querySelector("end");
+    const endDom = document.querySelector(".enddate");
     const end = endDom.value;
-    const reasonDom = document.querySelector("reason");
+    const reasonDom = document.querySelector(".reason");
     const reason = reasonDom.value; 
     if(scode == "disabled"){
         alert("사원을 선택하세요!");
@@ -151,4 +159,7 @@ function vacationAdd(){
     };
     vacationArray.push(obj)
     vacationPrint();
+    startDom.value = "";
+    endDom.value = "";
+    reasonDom.value = "";
 }
