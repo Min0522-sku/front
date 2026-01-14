@@ -1,0 +1,67 @@
+#wrap{
+    width: 960px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px #eeeeee;
+    padding: 50px;
+}
+#header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 50px;
+    padding: 50px 0px;
+}
+#header > input, #header > select{
+    border-radius: 5px;
+    padding: 10px;
+    border: #eeeeee 1px solid;
+}
+#header > button{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.del, .fix{
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.del{
+    background-color: #fdf5f5;
+    color: red;
+
+}
+.fix{
+    background-color: #eff3fe;
+    color: blue;
+    
+}
+
+/* 메인 영역 */
+#main > table{
+    width: 100%;
+    border-collapse: collapse;
+}
+#main >table th {
+    background-color: #eeeeee;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+#main >table td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
+#main >table img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
