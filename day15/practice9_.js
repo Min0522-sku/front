@@ -93,7 +93,7 @@ function vacationPrint(){
         };
 
         html += `
-                <div id="box2">
+                <div id="box">
                     <div class="line1">
                         <div>${staffName}</div><button class="vacationDel" onclick="vacationDel(${vacation.vcode})">신청취소</button>
                     </div>
@@ -129,14 +129,14 @@ function vacationDel(vcode){
 let vcode = 3;
 function vacationAdd(){
     const staffDom = document.querySelector(".staffselect");
-    const scode = staffDom.value;
+    const selectName = staffDom.value;
     const startDom = document.querySelector(".startdate")
     const start = startDom.value;
     const endDom = document.querySelector(".enddate");
     const end = endDom.value;
     const reasonDom = document.querySelector(".reason");
     const reason = reasonDom.value; 
-    if(scode == "disabled"){
+    if(selectName == "disabled"){
         alert("사원을 선택하세요!");
         return;
     };
@@ -148,11 +148,17 @@ function vacationAdd(){
         alert("휴가 사유를 적어주세요!");
         return;
     }
-
+    let foundScode = 0; // 찾은 사원코드를 저장할 변수
+    for (let i = 0; i < staff.length; i++) {
+        if (selectName == staff[i].staffName) {
+            foundScode = staff[i].scode; // 이름이 일치하는 사원의 번호를 저장
+            break; // 찾았으니 반복문 종료
+        }
+    }
     vcode +=1
     const obj = {
         "vcode" : vcode,
-        "scode" : scode,
+        "scode" : foundScode,
         "vacationStart" : start,
         "vacationEnd" : end,
         "vacationReason" : reason
