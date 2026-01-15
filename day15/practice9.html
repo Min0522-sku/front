@@ -21,7 +21,7 @@
         <div class="inputline">
         <h3 id="left_title">부서관리</h3>
         <input class="department" placeholder="신규 부서명 입력">
-        <button>추가</button>
+        <button onclick="departmentAdd()">추가</button>
         </div>
         <table>
             <thead>
@@ -35,7 +35,7 @@
             </tr>
             </thead>
 
-            <tbody>
+            <tbody id="departmentTable">
                 <tr>
                     <td>
                     <div class="dpt">
@@ -111,7 +111,7 @@
         </div> <!--center_line2 END-->
 
         <div id="center_line3">
-            <button>등록</button>
+            <button onclick="staffAdd()">등록</button>
         </div> <!--center_line3 END-->
 
         <div id="center_bottom">

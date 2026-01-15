@@ -14,6 +14,121 @@ const vacationArray = [
     {"vcode": 2, "scode": 2, "vacationStart": "2025-07-21", "vacationEnd": "2025-07-25", "vacationReason" : "여름 휴가"}
 ];
 
+//3-1] 부서 등록함수
+let dcode = departments[departments.length-1].dcode;
+function departmentAdd( ){
+    // 1. 입력받은 값들을 가져온다.
+    const departmentNameDom = document.querySelector(".department");
+    const departmentNames = departmentNameDom.value;
+    // 유효성 검사
+    if(departmentNames == "" ){ alert("부서명을 확인하십시오."); return;}
+    for(let i = 0 ; i <= departments.length-1 ; i++){
+        if( departmentNames == departments[i].departmentName){
+            alert("이미 존재하는 부서입니다."); return;
+        }
+    }
+    // 2. 식별코드
+    dcode += 1;
+    // 3. 구성한 객체를 배열에 저장한다.
+    const obj = { 'dcode': dcode, "departmentName": departmentNames};
+    // 사원 등록의 부서 칸도 departments를 사용하니 저장되지 않을까요
+    
+    // 4. 화면 새로고침/랜더링.
+    departments.push(obj);
+    departmentPrint();
+}
+
+//3-2] 부서 출력함수
+departmentPrint();
+function departmentPrint( ){
+    // 1. 어디에
+    const tbody = document.querySelector("tbody");
+    // 2. 무엇을 어떻게. 입력받은 것들을 html의 '어디에'에 tr 출력.
+    let html = ``;
+    for( let index = 0 ; index <= departments.length-1 ; index++){
+        let dep = departments[index];
+        html += `<tr>
+                    <td>${dep.departmentName}</td>
+                    <td><button class="update" onclick="departmentUpdate(${dep.dcode})">수정</button></td>
+                    <td><button class="delete" onclick="departmentDelete(${dep.dcode})">삭제</button></td>
+                </tr>`
+    }
+    // 3. 출력
+    tbody.innerHTML = html;
+
+    // 부서 Select에 넣기??
+    const Select = document.querySelector(".department");
+    let html1 = '';
+    for( let index = 0 ; index <= departments.length-1 ; index++){
+        let dep = departments[index];
+        html1 += `<option value="${dep.dcode}">${dep.departmentName}</option>`
+    }
+    Select.innerHTML = html1;   // console.log(Select)
+}
+
+//3-3] 부서 수정함수
+function departmentUpdate( dcode ){
+    for( let index = 0 ; index <= departments.length-1 ; index++){
+        if( dcode == departments[index].dcode){
+            const newDepartment = prompt("수정할 부서명을 입력하십시오.");
+            departments[index].departmentName = newDepartment;
+            departmentPrint();
+            break;
+        }
+    }
+}
+
+//3-4] 부서 삭제함수
+function departmentDelete( dcode ){
+    for(let index = 0 ; index <= departments.length-1 ; index++){
+        for(let index = 0 ; index <= staff.length-1 ; index++){
+            if(dcode == departments[index].dcode){
+                if( dcode == staff[index].dcode){ 
+                alert("부서에 소속된 사원이 존재하므로 삭제할 수 없습니다."); 
+                return; }
+            
+            departments.splice(index, 1);
+            departmentPrint();               
+            return;}
+        }
+    }
+}
+
+// [4] 사원영역 구현
+//4-1] 사원 등록함수
+let scode = staff[staff.length-1].scode;
+function staffAdd( ){
+    // 1. 입력받은 것 가져오기
+    const staffNameDom = document.querySelector(".staffName");
+    const staffNames = staffNameDom.value;
+    const staffRankDom = document.querySelector(".staffLank");
+    const staffRanks = staffRankDom.value;
+    const staffDepartmentDom = document.querySelector(".department");
+    const staffDepartment = staffDepartmentDom.value;
+    const staffImgDom = document.querySelector(".image");
+    const staffImgs = staffImgDom.files[0];
+    // 유효성 검사
+    if(staffDepartment == 'disabled'){alert("부서를 선택하세요."); return;}
+    if(staffNames == "" || staffRanks == ""){alert("이름과 직급 입력은 필수입니다."); return;}
+    // 2. 객체 구성하기. (입력받은 값 / 식별코드)
+    scode += 1;
+    
+    // 3. 구성한 객체를 배열에 저장하기.
+    let obj = {
+         "scode": scode, 
+         "staffName": staffNames, 
+         "staffRank": staffRanks, 
+         "staffImg": staffImgs == undefined ? "https://placehold.co/100" : URL.createObjectURL( staffImgs ), 
+         "dcode": staffDepartment
+    };
+
+    // 4. 화면 새로고침/렌더링
+    staff.push(obj);
+    staffPrint();
+}
+
+
+
 
 
 //사원 출력 함수
