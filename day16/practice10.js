@@ -1,13 +1,19 @@
-const memberList = [
-    {"no": 1, "id": "qwe", "pw":"1234"},
-    {"no": 2, "id": "asdf", "pw":"4567"},
-]
-localStorage.setItem('memberList', JSON.stringify(memberList));
+// const memberList = [
+//     {"no": 1, "id": "qwe", "pw":"1234"},
+//     {"no": 2, "id": "asdf", "pw":"4567"},
+// ]
+// localStorage.setItem('memberList', JSON.stringify(memberList));
 
 function signup(){
     const idInput = document.querySelector(".signId");
     const pwInput = document.querySelector(".signPw");
 
+    let memberList = localStorage.getItem("memberList"); //로컬 자료 가져오기
+    if(memberList == null){
+        memberList =[];
+    }else{
+        memberList = JSON.parse(memberList)
+    }
 
     let no = memberList.length >= 1 ? memberList[memberList.length - 1].no+1 : 1;
 
@@ -16,6 +22,7 @@ function signup(){
         'id' : idInput.value,
         'pw': pwInput.value
     };
+
     memberList.push(newMember)
     alert("회원가입 완료")
 
@@ -29,6 +36,13 @@ function login(){
     const idInput = document.querySelector(".loginId");
     const pwInput = document.querySelector(".loginPw");
 
+    let memberList = localStorage.getItem("memberList"); //로컬 자료 가져오기
+    if(memberList == null){
+        memberList =[];
+    }else{
+        memberList = JSON.parse(memberList)
+    }
+    
     let loginSuccess = false;
 
     for(let i = 0; i< memberList.length; i++){
