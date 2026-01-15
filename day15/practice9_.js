@@ -79,7 +79,7 @@ function staffFix(scode){ // 사원 수정 함수
 // 휴가 목록 출력 함수
 vacationPrint()
 function vacationPrint(){
-    const right_bottomDom = document.querySelector("#right_bottom") // html에 따라 바꿔야 하는곳
+    const right_bottomDom = document.querySelector("#right_bottom_inner") // html에 따라 바꿔야 하는곳
     let html = "";
     for(let i = 0; i<vacationArray.length; i++){ // 휴가 배열를 순회
         const vacation = vacationArray[i]; // 휴가의 객체 하나를 저장
